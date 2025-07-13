@@ -1,0 +1,259 @@
+@use '../abstracts/' as *;
+
+.form {
+	@include breakpoint-up(lg) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.questionWrapper {
+		height: 10.5625em;
+		margin-bottom: 2.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		@include breakpoint-up(md) {
+			height: 15.125em;
+			margin-bottom: 4rem;
+		}
+
+		@include breakpoint-up(lg) {
+			height: 28.25em;
+			max-width: 29.0625em;
+		}
+
+		.contentBlock {
+			p {
+				margin-bottom: 0.75rem;
+				font-size: var(--fs-body-md);
+				font-style: italic;
+				line-height: var(--lh-body-lg);
+				color: var(--clr-neutral-gray-navy);
+
+				@include breakpoint-up(md) {
+					margin-bottom: 1.6875rem;
+					font-size: var(--fs-body-xl);
+				}
+			}
+
+			h2 {
+				font-size: var(--fs-heading-xs);
+				font-weight: var(--fw-medium);
+				line-height: var(--lh-heading-lg);
+				color: var(--clr-neutral-navy-dark);
+
+				@include breakpoint-up(md) {
+					font-size: var(--fs-heading-md);
+				}
+			}
+		}
+
+		.progressBar {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			height: 1rem;
+			width: 100%;
+			padding: 0.25rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: var(--clr-neutral-white);
+			border: none;
+			border-radius: 999px;
+			overflow: hidden;
+		}
+
+		.progressBar::-moz-progress-bar {
+			margin: 0.25rem;
+			background-color: var(--clr-primary-purple);
+			border-radius: 104px;
+		}
+
+		.progressBar::-webkit-progress-bar {
+			background-color: var(--clr-neutral-white);
+			border-radius: 104px;
+		}
+
+		.progressBar[value]::-moz-progress-bar {
+			height: 0.5rem;
+			width: 100%;
+		}
+
+		.progressBar::-webkit-progress-value {
+			background-color: var(--clr-primary-purple);
+			border-radius: 104px;
+		}
+	}
+
+	.optionsWrapper {
+		width: 100%;
+		margin-bottom: 0.75rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 0.75rem;
+
+		@include breakpoint-up(md) {
+			margin-bottom: 2rem;
+			gap: 1.5rem;
+		}
+
+		@include breakpoint-up(lg) {
+			width: 35.25em;
+		}
+
+		li {
+			width: 100%;
+			box-shadow: 0 16px 40px var(--clr-shadow-gray-navy);
+
+			.optionButton {
+				width: 100%;
+				padding: 0.75rem;
+				display: grid;
+				grid-template-columns: 40px auto 32px;
+				gap: 1rem;
+				align-items: center;
+				background-color: var(--clr-neutral-white);
+				border: none;
+				border-radius: 12px;
+				font-size: var(--fs-heading-xxs);
+				font-weight: var(--fw-medium);
+				line-height: var(--lh-heading-xs);
+				text-align: left;
+				color: var(--clr-neutral-navy-dark);
+				cursor: pointer;
+
+				@include breakpoint-up(md) {
+					grid-template-columns: 56px auto 40px;
+					gap: 2rem;
+					font-size: var(--fs-heading-sm);
+				}
+
+				.optionIdentifier {
+					height: 40px;
+					width: 40px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background-color: var(--clr-neutral-gray-light);
+					border-radius: 6px;
+					font-size: var(--fs-heading-xxs);
+					font-weight: var(--fw-medium);
+					line-height: var(--lh-heading-xs);
+					color: var(--clr-neutral-gray-navy);
+
+					@include breakpoint-up(md) {
+						height: 56px;
+						width: 56px;
+						font-size: var(--fs-heading-sm);
+					}
+				}
+
+				.statusIcon img {
+					height: 32px;
+					width: 32px;
+
+					@include breakpoint-up(md) {
+						height: 40px;
+						width: 40px;
+					}
+				}
+			}
+
+			.optionButton.selected {
+				outline: 3px solid var(--clr-primary-purple);
+
+				.optionIdentifier {
+					background-color: var(--clr-primary-purple);
+					color: var(--clr-neutral-white);
+				}
+			}
+
+			.optionButton.selected.correct {
+				outline: 3px solid var(--clr-primary-green);
+
+				.optionIdentifier {
+					background-color: var(--clr-primary-green);
+					color: var(--clr-neutral-white);
+				}
+			}
+
+			.optionButton.selected.incorrect {
+				outline: 3px solid var(--clr-primary-red);
+
+				.optionIdentifier {
+					background-color: var(--clr-primary-red);
+					color: var(--clr-neutral-white);
+				}
+			}
+		}
+	}
+}
+
+form.darkTheme {
+	.questionWrapper {
+		.contentBlock {
+			p {
+				color: var(--clr-primary-bluish-light);
+			}
+
+			h2 {
+				color: var(--clr-neutral-white);
+			}
+		}
+
+		.progressBar {
+			background-color: var(--clr-neutral-navy);
+		}
+
+		.progressBar::-webkit-progress-bar {
+			background-color: var(--clr-neutral-navy);
+		}
+	}
+
+	.optionsWrapper {
+		li {
+			box-shadow: 0 16px 40px var(--clr-shadow-navy-dark);
+
+			.optionButton {
+				background-color: var(--clr-neutral-navy);
+				color: var(--clr-neutral-white);
+
+				.optionIdentifier {
+					background-color: var(--clr-neutral-gray-light);
+					color: var(--clr-neutral-gray-navy);
+				}
+			}
+
+			.optionButton.selected {
+				outline: 3px solid var(--clr-primary-purple);
+
+				.optionIdentifier {
+					background-color: var(--clr-primary-purple);
+					color: var(--clr-neutral-white);
+				}
+			}
+
+			.optionButton.selected.correct {
+				outline: 3px solid var(--clr-primary-green);
+
+				.optionIdentifier {
+					background-color: var(--clr-primary-green);
+					color: var(--clr-neutral-white);
+				}
+			}
+
+			.optionButton.selected.incorrect {
+				outline: 3px solid var(--clr-primary-red);
+
+				.optionIdentifier {
+					background-color: var(--clr-primary-red);
+					color: var(--clr-neutral-white);
+				}
+			}
+		}
+	}
+}
