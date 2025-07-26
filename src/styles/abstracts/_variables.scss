@@ -1,0 +1,95 @@
+// ----- Colors -----
+
+$colors: (
+	primary: (
+		'green': hsl(151, 70%, 50%),
+		'bluish-light': hsl(216, 47%, 78%),
+		'purple': hsl(277, 91%, 56%),
+		'red': hsl(0, 82%, 63%)
+	),
+	neutral: (
+		'gray-navy': hsl(219, 13%, 44%),
+		'gray-light': hsl(220, 38%, 97%),
+		'navy': hsl(215, 27%, 32%),
+		'navy-dark': hsl(216, 25%, 25%),
+		'white': hsl(0, 100%, 100%)
+	),
+	accent: (
+		'green': hsl(151, 88%, 94%),
+		'blue': hsl(225, 100%, 96%),
+		'purple': hsl(278, 100%, 95%),
+		'red': hsl(22, 100%, 96%)
+	),
+	shadow: (
+		'navy-dark': hsla(216, 25%, 25%, 0.14),
+		'gray-navy': hsla(220, 29%, 66%, 0.14)
+	),
+	hover: (
+		'purple': hsl(277, 91%, 78%)
+	)
+);
+
+// ----- Typography -----
+
+@font-face {
+	font-family: 'Rubik';
+	font-style: normal;
+	src: url('../../src/assets/fonts/Rubik-VariableFont_wght.ttf')
+		format('truetype');
+}
+
+@font-face {
+	font-family: 'Rubik';
+	font-style: italic;
+	src: url('.../../src/assets/fonts/Rubik-Italic-VariableFont_wght.ttf')
+		format('truetype');
+}
+
+$font-families: (
+	primary: (
+		rubik: "'Rubik', sans-serif"
+	)
+);
+
+$font-sizes: (
+	display: (
+		md: 9rem,
+		sm: 5.5rem
+	),
+	heading: (
+		xl: 4rem,
+		lg: 2.5rem,
+		md: 2.25rem,
+		sm: 1.75rem,
+		xs: 1.25rem,
+		xxs: 1.125rem
+	),
+	body: (
+		xxl: 1.5rem,
+		xl: 1.25rem,
+		lg: 1.125rem,
+		md: 0.875rem,
+		sm: 0.75rem
+	)
+);
+
+$font-weights: (
+	light: 300,
+	regular: 400,
+	medium: 500,
+	semiBold: 600,
+	bold: 700,
+	extraBold: 800,
+	'black': 900
+);
+
+$line-heights: (
+	display: 100%,
+	heading-lg: 120%,
+	heading-sm: 110%,
+	heading-xs: 100%,
+	body-lg: 150%,
+	body-sm: 100%
+);
+
+// ----- Misc Variables -----

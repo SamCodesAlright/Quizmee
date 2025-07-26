@@ -1,0 +1,30 @@
+@use '../abstracts/' as *;
+
+header {
+	margin: 0 auto;
+	padding: 1rem 1.5rem;
+	width: 100%;
+	max-width: 1440px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	@include breakpoint-up(md) {
+		padding: 2.5rem 4rem;
+	}
+
+	@include breakpoint-up(lg) {
+		padding: 5.25rem 8.875rem;
+	}
+
+	.themeSwitch {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+
+		svg {
+			height: 1rem;
+			width: 1rem;
+		}
+	}
+}
